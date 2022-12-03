@@ -13,7 +13,7 @@ class Movie2021Spider(scrapy.Spider):
     def start_requests(self):
         for page in range(25):
             page = page * 20
-            url = 'https://m.douban.com/rexxar/api/v2/movie/recommend?refresh=0&start=%d&count=20&selected_categories={}&uncollect=false&tags=2021' % page
+            url = 'https://m.douban.com/rexxar/api/v2/movie/recommend?refresh=0&start=%d&count=20&selected_categories={}&uncollect=false&tags=2021&ck=9-oe' % page
             yield Request(url=url, callback=self.parse)
 
     def parse(self, response, **kwargs):
@@ -65,4 +65,7 @@ class Movie2021Spider(scrapy.Spider):
         movie2021_item['duration'] = int(re.findall('\d+', duration)[0])
         # 评分
         movie2021_item['rank'] = float(sel.css('strong[property="v:average"]::text').get().strip())
+        # 评价人数
+        movie2021_item['rating_people'] = int(sel.css('span[property="v:votes"]::text').get())
+
         yield movie2021_item

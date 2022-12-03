@@ -26,3 +26,4 @@ class Movie2021Item(scrapy.Item):
     release_date = scrapy.Field()
     duration = scrapy.Field()
     rank = scrapy.Field()
+    rating_people = scrapy.Field()

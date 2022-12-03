@@ -14,7 +14,8 @@ class DoubanPipeline:
         self.ws = self.wb.active
         self.ws.title = "Movie2021"
         self.ws.append(
-            ("电影ID", "标题", "类型1", "类型2", "类型3", "制片国家/地区", "语言", "上映日期", "片长", "评分"))
+            ("电影ID", "电影名", "类型1", "类型2", "类型3", "制片国家/地区", "语言", "上映日期", "片长", "评分",
+             "评价人数"))
 
     def close_spider(self, spider):
         self.wb.save('电影数据2021.xlsx')
@@ -30,6 +31,8 @@ class DoubanPipeline:
         release_date = item.get('release_date', '')
         duration = item.get('duration', '')
         rank = item.get('rank', '')
+        rating_people = item.get('rating_people', '')
         self.ws.append(
-            (movie_id, title, type1, type2, type3, production_country, language, release_date, duration, rank,))
+            (movie_id, title, type1, type2, type3, production_country, language, release_date, duration, rank,
+             rating_people))
         return item
