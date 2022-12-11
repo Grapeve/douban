@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Scripy爬取豆瓣2021年所有电影
 
 目录下的requirements.txt存放了该项目所需要的库的版本。
@@ -187,3 +188,6 @@ class DoubanPipeline:
 ```
 
 
+=======
+# douban
+>>>>>>> a1bf7d7d36cc63fe2401ac484069b01a800cc371
