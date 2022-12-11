@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Scripy爬取豆瓣2021年所有电影
 
 目录下的requirements.txt存放了该项目所需要的库的版本。
@@ -8,8 +8,6 @@
 ```python
 pip install -r requirements.txt
 ```
-
-
 
 ## 1. 项目运行
 
@@ -184,10 +182,4 @@ class DoubanPipeline:
             (movie_id, title, type1, type2, type3, production_country, language, release_date, duration, rank,
              rating_people))
         return item
-
 ```
-
-
-=======
-# douban
->>>>>>> a1bf7d7d36cc63fe2401ac484069b01a800cc371
