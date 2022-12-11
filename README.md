@@ -13,7 +13,7 @@ pip install -r requirements.txt
 
 1. 前往middlewares.py中配置自己的Cookie。
 
-![](C:\Users\DELL\AppData\Roaming\marktext\images\2022-12-11-15-08-10-image.png)
+![](https://s1.ax1x.com/2022/12/11/zhEmrD.png)
 
 获取Cookie，前往 https://movie.douban.com/explore ，打开F12，选择网络一栏。点击页面**年代**选**2021**，
 
