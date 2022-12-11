@@ -11,7 +11,7 @@ class Movie2021Spider(scrapy.Spider):
     allowed_domains = ['movie.douban.com']
 
     def start_requests(self):
-        for page in range(25):
+        for page in range(1):
             page = page * 20
             url = 'https://m.douban.com/rexxar/api/v2/movie/recommend?refresh=0&start=%d&count=20&selected_categories={}&uncollect=false&tags=2021&ck=9-oe' % page
             yield Request(url=url, callback=self.parse)
@@ -57,7 +57,7 @@ class Movie2021Spider(scrapy.Spider):
             '//*[@id="info"]/span[contains(text(),"制片国家/地区")]/following::text()[1]').get().strip()
         # 语言
         movie2021_item['language'] = sel.xpath(
-            '//*[@id="info"]/span[contains(text(),"语言")]/following::text()[1]').get().strip()
+            '//*[@id="info"]/span[contains(text(),"语言")]/following::text()[1]').get()
         # 上映时间
         movie2021_item['release_date'] = sel.css('span[property="v:initialReleaseDate"]::text').get().strip()[:10]
         # 片长
